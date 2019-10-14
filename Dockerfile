@@ -15,5 +15,6 @@ RUN apt-get install ca-certificates
 RUN tar --strip-components=1 -xzvf  /opt/oc/release.tar.gz -C /opt/oc/ && \
     mv /opt/oc/oc /usr/bin/ && \
     rm -rf /opt/oc
+RUN cp /usr/bin/oc /bin/oc
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT [ "docker-entrypoint.sh" ]
