@@ -21,5 +21,6 @@ COPY docker-entrypoint.sh /usr/local/bin/
 ##Install Kustomize
 RUN wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv3.2.3/kustomize_kustomize.v3.2.3_linux_amd64
 RUN mv kustomize_kustomize.v3.2.3_linux_amd64 kustomize
+RUN chmod +x kustomize
 RUN mv kustomize /usr/bin/kustomize
 ENTRYPOINT [ "docker-entrypoint.sh" ]
