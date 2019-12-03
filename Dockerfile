@@ -23,4 +23,7 @@ RUN wget https://github.com/kubernetes-sigs/kustomize/releases/download/kustomiz
 RUN mv kustomize_kustomize.v3.2.3_linux_amd64 kustomize
 RUN chmod +x kustomize
 RUN mv kustomize /usr/bin/kustomize
+
+##Install Envsubst
+RUN apt-get install -y gettext-base
 ENTRYPOINT [ "docker-entrypoint.sh" ]
