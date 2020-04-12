@@ -14,8 +14,10 @@ RUN wget -O /opt/oc/release.tar.gz https://github.com/openshift/origin/releases/
 RUN apt-get install ca-certificates
 RUN tar --strip-components=1 -xzvf  /opt/oc/release.tar.gz -C /opt/oc/ && \
     mv /opt/oc/oc /usr/bin/ && \
+    mv /opt/oc/kubectl /usr/bin/ && \
     rm -rf /opt/oc
 RUN cp /usr/bin/oc /bin/oc
+RUN cp /usr/bin/kubectl /bin/kubectl
 COPY docker-entrypoint.sh /usr/local/bin/
 
 ##Install Kustomize
